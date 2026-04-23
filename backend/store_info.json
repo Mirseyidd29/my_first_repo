@@ -1,0 +1,29 @@
+{
+  "filiallar": [
+    {
+      "ad": "Neftçilər filialı",
+      "unvan": "Neftçilər prospekti 47, Bakı",
+      "is_saatlari": "09:00 - 21:00",
+      "telefon": "+994 55 255 85 85"
+    },
+    {
+      "ad": "28 May filialı",
+      "unvan": "28 May küçəsi 12, Bakı",
+      "is_saatlari": "09:00 - 21:00",
+      "telefon": "+994 55 255 85 85"
+    }
+  ],
+  "catdirilma": {
+    "baki_daxili": "Bakı daxili çatdırılma 1 iş günü ərzində",
+    "rayonlar": "Rayonlara 2-3 iş günü",
+    "pulsuz_hedd": "50 AZN və yuxarı sifarişlərə pulsuz çatdırılma",
+    "ucret": "50 AZN-dən aşağı sifarişlərə 5 AZN çatdırılma"
+  },
+  "odeme": ["Nağd", "Kart (POS terminal)", "Online ödəniş"],
+  "elaqe": {
+    "instagram": "@atlet.az",
+    "whatsapp": "+994 55 255 85 85",
+    "telefon": "+994 55 255 85 85",
+    "website": "https://atlet.az"
+  }
+}

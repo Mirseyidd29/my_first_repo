@@ -1,0 +1,21 @@
+# Ignore the .env file so your API key is never uploaded to GitHub
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Ignore virtual environment folders
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+debug.log
+
+# Claude Code
+.claude/

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlas — atlet.az</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { background-color: #0a0a0a; }
+
+      #chat-panel {
+        transform: scale(0.95) translateY(16px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    opacity 0.2s ease;
+        transform-origin: bottom right;
+      }
+      #chat-panel.open {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      #toggle-btn {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      #toggle-btn:hover {
+        transform: scale(1.08);
+      }
+      #toggle-btn.open {
+        transform: scale(1.08);
+      }
+
+      #messages::-webkit-scrollbar { width: 4px; }
+      #messages::-webkit-scrollbar-track { background: transparent; }
+      #messages::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    </style>
+  </head>
+  <body class="min-h-screen">
+
+    <!-- Demo page content -->
+    <div class="flex items-center justify-center min-h-screen">
+      <p class="text-zinc-700 text-sm">atlet.az — Atlas widget demo</p>
+    </div>
+
+    <!-- Chat panel -->
+    <div
+      id="chat-panel"
+      class="fixed bottom-24 right-5 w-[360px] flex flex-col rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 z-50"
+      style="background:#111111; height:520px;"
+    >
+      <!-- Header -->
+      <div class="flex items-center gap-3 px-4 py-3 border-b border-zinc-800 flex-shrink-0">
+        <img src="/static/atlas-avatar.png" alt="Atlas" class="w-9 h-9 rounded-full object-cover" />
+        <div>
+          <div class="text-white font-semibold text-sm">Atlas</div>
+          <div class="text-zinc-400 text-xs">atlet.az köməkçisi</div>
+        </div>
+        <div class="ml-auto flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-green-400 inline-block"></span>
+          <span class="text-zinc-400 text-xs">Online</span>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div id="messages" class="flex-1 overflow-y-auto px-3 py-4 flex flex-col gap-3">
+        <div id="empty-state" class="flex flex-col items-center justify-center h-full gap-4">
+          <img src="/static/atlas-full.png" alt="Atlas" class="w-32 h-32 object-contain opacity-90" />
+          <p class="text-zinc-500 text-xs text-center px-4">Salam! Supplement, qiymət, çatdırılma — nə lazımdırsa soruş.</p>
+        </div>
+      </div>
+
+      <!-- Input -->
+      <div class="px-3 py-3 border-t border-zinc-800 flex-shrink-0">
+        <div class="flex items-center gap-2 rounded-xl px-3 py-2" style="background:#1a1a1a;">
+          <input
+            id="input"
+            type="text"
+            placeholder="Mesaj yaz..."
+            autocomplete="off"
+            class="flex-1 bg-transparent text-gray-100 text-sm placeholder-zinc-600 outline-none"
+          />
+          <button
+            id="send-btn"
+            class="w-7 h-7 rounded-lg flex items-center justify-center transition-opacity disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
+            style="background:#e41e26;"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white" class="w-3.5 h-3.5">
+              <path d="M3.105 2.288a.75.75 0 0 0-.826.95l1.414 4.926A1.5 1.5 0 0 0 5.135 9.25h6.115a.75.75 0 0 1 0 1.5H5.135a1.5 1.5 0 0 0-1.442 1.086l-1.414 4.926a.75.75 0 0 0 .826.95 28.897 28.897 0 0 0 15.293-7.155.75.75 0 0 0 0-1.114A28.897 28.897 0 0 0 3.105 2.288Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toggle button -->
+    <button
+      id="toggle-btn"
+      class="fixed bottom-5 right-5 w-14 h-14 rounded-full shadow-lg z-50 overflow-hidden border-2"
+      style="border-color:#e41e26;"
+    >
+      <img src="/static/atlas-avatar.png" alt="Atlas" class="w-full h-full object-cover" id="btn-avatar" />
+      <span id="btn-close" class="absolute inset-0 flex items-center justify-center text-white text-xl font-light opacity-0 transition-opacity" style="background:#e41e26;">✕</span>
+    </button>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
